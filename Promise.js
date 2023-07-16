@@ -1,39 +1,39 @@
-// const cart = ["shoes", "pants", "kurtas"];
-// console.log(cart)
+const cart = ["shoes", "pants", "kurtas"];
+console.log(cart)
 
-// function createOrder() {
-//   console.log('check')
-// }
-// /*createOrder(cart, function () { //inversion of control
-//   proceedToPayment(orderId); //async
-// }); // async
-// */
-// // Inversion of control
-// // Means that this call back function will be called once order is created but what if it never calls the callback function so we can't blindly trust it
-// //Passing call back function like this is not good
-// // We can handle this using promises
+function createOrder() {
+  console.log('check')
+}
+/*createOrder(cart, function () { //inversion of control
+  proceedToPayment(orderId); //async
+}); // async
+*/
+// Inversion of control
+// Means that this call back function will be called once order is created but what if it never calls the callback function so we can't blindly trust it
+//Passing call back function like this is not good
+// We can handle this using promises
 
-// const promise = createOrder(cart) // this will return a promise
-// // promise is nothing but an empty object with data value in it {data: [will hold whatver this create order api will return to us]}
+const promise = createOrder(cart) // this will return a promise
+// promise is nothing but an empty object with data value in it {data: [will hold whatver this create order api will return to us]}
 
-// //{data : undefined} it will be undefined at start but will be filled once api call is returned and data will be filled with api response data
+//{data : undefined} it will be undefined at start but will be filled once api call is returned and data will be filled with api response data
 
-// promise.then(function () { // we will use this funtion that is available in promise object
-//   proceedToPayment(orderId);  //here we have control as it is attached to promise .then function  , 
-//   // it will wait till promise object is filled with data and then it will automatically call the callbackfunction back
-//   //it will call 100% and only once
-// })
+promise.then(function () { // we will use this funtion that is available in promise object
+  proceedToPayment(orderId);  //here we have control as it is attached to promise .then function  , 
+  // it will wait till promise object is filled with data and then it will automatically call the callbackfunction back
+  //it will call 100% and only once
+})
 
-// const GITHUB_API = "https://jsonplaceholder.typicode.com/posts";
-// const user = fetch(GITHUB_API); // api given by browser to fetch api data by design it returns a promise
-// //Result =[[PromiseResult]] : undefined result of promise at initital
-// //state == [[PromiseState]] inititallly it is in pending state , fulfilled /Rejected only three states
-// // after that it changes to fulfilled state
+const GITHUB_API = "https://jsonplaceholder.typicode.com/posts";
+const user = fetch(GITHUB_API); // api given by browser to fetch api data by design it returns a promise
+//Result =[[PromiseResult]] : undefined result of promise at initital
+//state == [[PromiseState]] inititallly it is in pending state , fulfilled /Rejected only three states
+// after that it changes to fulfilled state
 
-// console.log(user)
-// user.then(function (data) {
-//   console.log(data)
-// })
+console.log(user)
+user.then(function (data) {
+  console.log(data)
+})
 
 
 //What is a promise
